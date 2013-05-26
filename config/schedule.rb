@@ -1,6 +1,5 @@
-working_dir = File.join(Dir.pwd, 'log/backup.log')
-set :output, working_dir
+set :output, File.join(Dir.pwd, 'log/backup.log')
 
 every 10.minutes do
-  command File.join(working_dir, "bin/backup")
+  command File.join(Dir.pwd, 'bin/backup')
 end
