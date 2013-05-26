@@ -1,5 +1,6 @@
-set :output, "/home/deploy/backup/current/log/backup.log"
+working_dir = File.join(Dir.pwd, 'log/backup.log')
+set :output, working_dir
 
 every 10.minutes do
-  command "/home/deploy/backup/current/backup.sh"
+  command File.join(working_dir, "bin/backup")
 end
