@@ -8,7 +8,7 @@ source config/settings
 BACKUP_FILE="`date \+\\%Y_\\%m_\\%d_\\%H_\\%M`.sql.bz2"
 
 # Dump the database, compressing it in the process
-pg_dump --clean --no-owner --no-privileges -h localhost -U momma momma-production | bzip2 > $BACKUP_FILE
+pg_dump --clean --no-owner --no-privileges -h localhost -U $DB_USERNAME $DB_NAME | bzip2 > $BACKUP_FILE
 
 # Move the backup file to the remote server
 rsync -e ssh -av $BACKUP_FILE $BACKUP_URL
