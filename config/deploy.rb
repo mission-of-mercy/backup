@@ -6,6 +6,7 @@ require 'bundler/capistrano'
 require 'whenever/capistrano'
 
 set :application, "backup"
+set :whenever_identifier, "backup"
 
 set :repository, "git://github.com/mission-of-mercy/backup.git"
 set :deploy_via, :remote_cache
